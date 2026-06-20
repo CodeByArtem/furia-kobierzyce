@@ -36,12 +36,12 @@ export default function Media() {
     <section className={styles.media} id="media">
       <div className={styles.container}>
         <div ref={headerRef} className={`${styles.header} ${headerVisible ? 'fade-in visible' : 'fade-in'}`}>
-          <span className={styles.label}>// Nasze Treningi</span>
+          <span className={styles.label}>// Media</span>
           <h2 className={styles.title}>
-            Treningi i <span className={styles.accent}>Wydarzenia</span>
+            Furia w <span className={styles.accent}>Obiektywie</span>
           </h2>
           <p className={styles.description}>
-            Emocje, pot, walka na siatce i najlepsze моменты z наших treningów oraz wydarzeń.
+            Emocje, pot, walka na siatce i najlepsze моменты z naszych meczów oraz treningów.
           </p>
         </div>
 
