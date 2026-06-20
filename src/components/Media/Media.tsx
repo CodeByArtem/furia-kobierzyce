@@ -36,7 +36,6 @@ export default function Media() {
     <section className={styles.media} id="media">
       <div className={styles.container}>
         <div ref={headerRef} className={`${styles.header} ${headerVisible ? 'fade-in visible' : 'fade-in'}`}>
-          <span className={styles.label}>// Media</span>
           <h2 className={styles.title}>
             Furia w <span className={styles.accent}>Obiektywie</span>
           </h2>

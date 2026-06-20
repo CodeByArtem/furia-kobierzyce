@@ -14,7 +14,6 @@ export default function History() {
       <div className={styles.container}>
         <div className={styles.grid}>
           <div ref={contentRef} className={`${styles.content} ${contentVisible ? 'slide-in-left visible' : 'slide-in-left'}`}>
-            <span className={styles.label}>// O nas</span>
             <h2 className={styles.title}>
               Skąd wzięła się <span className={styles.gradient}>Furia?</span>
             </h2>

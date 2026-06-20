@@ -54,7 +54,6 @@ export default function Roster() {
     <section className={styles.roster} id="roster">
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.label}>// Skład Drużyny</span>
           <h2 className={styles.title}>
             Nasze <span className={styles.accent}>Zawodniczki</span>
           </h2>

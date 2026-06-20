@@ -5,7 +5,6 @@ export default function Sponsors() {
     <section className={styles.sponsors} id="sponsors">
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.label}>// Wsparcie</span>
           <h2 className={styles.title}>
             Nasi <span className={styles.gradient}>Sponsorzy</span>
           </h2>

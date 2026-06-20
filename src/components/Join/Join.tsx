@@ -70,7 +70,6 @@ export default function Join() {
     <section className={styles.join} id="join">
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.label}>// Rekrutacja</span>
           <h2 className={styles.title}>
             Rozpal w sobie <span className={styles.accent}>Furię</span>
           </h2>

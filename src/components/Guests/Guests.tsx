@@ -18,7 +18,6 @@ export default function Guests() {
     <section className={styles.guests}>
       <div className={styles.container}>
         <div ref={headerRef} className={`${styles.header} ${headerVisible ? 'fade-in visible' : 'fade-in'}`}>
-          <span className={styles.label}>// Nasi Goście</span>
           <h2 className={styles.title}>
             Stali <span className={styles.accent}>Goście</span>
           </h2>
