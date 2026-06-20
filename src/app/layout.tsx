@@ -19,12 +19,35 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Furia Kobierzyce | Oficjalna Strona Drużyny",
   description: "Pasja, wspólny rozwój, dobra energia. Amatorska drużyna siatkówki z Kobierzyc. Dołącz do nas i rozwijaj się razem z nami!",
-  keywords: ["Furia Kobierzyce", "siatkówka", "amatorska drużyna", "Kobierzyce", "sport", "volleyball"],
+  keywords: ["Furia Kobierzyce", "siatkówka", "amatorska drużyna", "Kobierzyce", "sport", "volleyball", "treningi", "turnieje"],
+  authors: [{ name: "Furia Kobierzyce" }],
+  creator: "Furia Kobierzyce",
   openGraph: {
     title: "Furia Kobierzyce | Oficjalna Strona Drużyny",
     description: "Pasja, wspólny rozwój, dobra energia. Amatorska drużyna siatkówki z Kobierzyc.",
     type: "website",
     locale: "pl_PL",
+    siteName: "Furia Kobierzyce",
+    url: "https://furia-kobierzyce.vercel.app",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Furia Kobierzyce | Oficjalna Strona Drużyny",
+    description: "Pasja, wspólny rozwój, dobra energia. Amatorska drużyna siatkówki z Kobierzyc.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code",
   },
 };
 

@@ -71,22 +71,30 @@ export default function Media() {
 
         <div ref={ctaRef} className={`${styles.cta} ${ctaVisible ? 'slide-in-right visible' : 'slide-in-right'}`}>
           <div className={styles.ctaContent}>
-            <div className={styles.ctaIcon}>
-              <i className="fa-brands fa-instagram"></i>
-            </div>
-            <h3 className={styles.ctaTitle}>Śledź nas na Instagramie</h3>
+            <h3 className={styles.ctaTitle}>Śledź nas w social media</h3>
             <p className={styles.ctaDescription}>
-              Zaglądaj za kulisy, oglądaj relacje z meczów i dołącz do naszej społeczności @furiakobierzyce
+              Zaglądaj za kulisy, oglądaj relacje z meczów i dołącz do naszej społeczności
             </p>
-            <a
-              href="https://instagram.com/furiakobierzyce"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.ctaButton}
-            >
-              <i className="fa-brands fa-instagram"></i>
-              Zobacz Profil
-            </a>
+            <div className={styles.ctaButtons}>
+              <a
+                href="https://www.instagram.com/furiakobierzyce?igsh=d3MyaTVzbHN0a2Nz&utm_source=qr&fbclid=IwY2xjawSjYlVleHRuA2FlbQIxMABicmlkETE4TEVnblduVUtqUGNsQU9Tc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHrjc8jPqjkv2t6_ejLYg_yZd74vlWao69smJlqIjQK6Mw0Am9jNy1wFcUVtq_aem_GiHLLyjhWCtWO_ktpK1rzQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${styles.ctaButton} ${styles.ctaButtonInstagram}`}
+              >
+                <i className="fa-brands fa-instagram"></i>
+                Instagram
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61589415682833"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${styles.ctaButton} ${styles.ctaButtonFacebook}`}
+              >
+                <i className="fa-brands fa-facebook"></i>
+                Facebook
+              </a>
+            </div>
           </div>
         </div>
       </div>
