@@ -1,0 +1,121 @@
+@use '@/styles/variables' as *;
+
+// Button mixins
+@mixin button-primary {
+  background-color: $brand-accent;
+  color: $text-white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: $radius-md;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background-color $transition-normal ease;
+
+  &:hover {
+    background-color: $brand-accent-hover;
+  }
+}
+
+@mixin button-secondary {
+  background-color: transparent;
+  color: $text-white;
+  border: 1px solid $border-white-20;
+  padding: 1rem 2rem;
+  border-radius: $radius-md;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all $transition-normal ease;
+
+  &:hover {
+    border-color: $text-white;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+// Card mixins
+@mixin card {
+  background-color: $brand-light;
+  border: 1px solid $border-white-5;
+  border-radius: $radius-xl;
+  padding: $spacing-lg;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  transition: border-color $transition-normal ease, transform $transition-normal ease;
+
+  &:hover {
+    border-color: rgba(220, 38, 38, 0.5);
+    transform: translateY(-0.25rem);
+  }
+}
+
+// Responsive mixins
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 $spacing-sm;
+
+  @include tablet {
+    padding: 0 $spacing-md;
+  }
+
+  @include desktop {
+    padding: 0 $spacing-lg;
+  }
+}
+
+// Text mixins
+@mixin heading {
+  font-family: $font-heading;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+@mixin section-title {
+  @include heading;
+  font-size: 2.5rem;
+  color: $text-white;
+  margin-bottom: $spacing-lg;
+
+  @include tablet {
+    font-size: 3rem;
+  }
+
+  @include desktop {
+    font-size: 3.75rem;
+  }
+}
+
+// Flexbox mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

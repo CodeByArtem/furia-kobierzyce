@@ -1,0 +1,77 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.sponsors {
+  padding: 6rem 0;
+  background-color: $brand-light;
+  border-bottom: 1px solid $border-white-5;
+  overflow: hidden;
+}
+
+.container {
+  @include container;
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.label {
+  display: block;
+  color: $brand-accent;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  @include heading;
+  font-size: 2.5rem;
+  color: $text-white;
+  margin-bottom: 1rem;
+
+  @include tablet {
+    font-size: 3rem;
+  }
+
+  @include desktop {
+    font-size: 3.75rem;
+  }
+}
+
+.gradient {
+  background: linear-gradient(to right, $brand-accent, #dc2626);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 48rem;
+  margin: 0 auto;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  @include card;
+  padding: 2rem;
+}
+
+.sponsorName {
+  @include heading;
+  font-size: 1.875rem;
+  background: linear-gradient(to right, $text-gray-400, $text-white);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.1em;
+}

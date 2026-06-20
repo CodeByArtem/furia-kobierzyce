@@ -1,0 +1,186 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.history {
+  position: relative;
+  padding: 6rem 0;
+  background-color: $brand-dark;
+  border-bottom: 1px solid $border-white-5;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgba($brand-light, 0.3);
+  transform: skewX(-12deg) translateX(8rem);
+  display: none;
+
+  @include desktop {
+    display: block;
+  }
+}
+
+.glow {
+  position: absolute;
+  left: -8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24rem;
+  height: 24rem;
+  background-color: rgba($brand-accent, 0.05);
+  filter: blur(100px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.container {
+  @include container;
+  position: relative;
+  z-index: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+
+  @include desktop {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.label {
+  color: $brand-accent;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  @include heading;
+  font-size: 2.5rem;
+  color: $text-white;
+  margin-bottom: 1.5rem;
+
+  @include tablet {
+    font-size: 3rem;
+  }
+
+  @include desktop {
+    font-size: 3.75rem;
+  }
+}
+
+.gradient {
+  background: linear-gradient(to right, $brand-accent, #dc2626);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: $text-gray-400;
+  font-size: 1.125rem;
+  line-height: 1.75;
+
+  strong {
+    color: $text-white;
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  background-color: $brand-light;
+  padding: 1.5rem;
+  border-radius: $radius-2xl;
+  border: 1px solid $border-white-5;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  transition: border-color $transition-normal ease, transform $transition-normal ease;
+
+  &:hover {
+    border-color: rgba($brand-accent, 0.5);
+    transform: translateY(-0.25rem);
+  }
+}
+
+.cardOffset {
+  @include tablet {
+    margin-top: 3rem;
+  }
+}
+
+.cardWide {
+  @include tablet {
+    grid-column: span 2;
+  }
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  background-color: $brand-dark;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $brand-accent;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid $border-white-10;
+}
+
+.iconLarge {
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  @include heading;
+  font-size: 1.25rem;
+  color: $text-white;
+  margin-bottom: 0.5rem;
+}
+
+.cardText {
+  color: $text-gray-500;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @include tablet {
+    flex-direction: row;
+    align-items: center;
+  }
+}

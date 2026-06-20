@@ -1,0 +1,209 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.guests {
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, rgba($brand-dark, 0.3) 0%, rgba($brand-dark, 0.5) 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba($brand-accent, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.label {
+  display: inline-block;
+  color: $brand-accent;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: $text-white;
+}
+
+.accent {
+  background: linear-gradient(135deg, $brand-accent 0%, #ff6b6b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  font-size: 1.125rem;
+  color: $text-gray-300;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid $border-white-10;
+  border-radius: $radius-lg;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: all $transition-normal ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba($brand-accent, 0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity $transition-normal ease;
+  }
+
+  &:hover {
+    border-color: rgba($brand-accent, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+    &::before {
+      opacity: 1;
+    }
+
+    .cardIcon {
+      transform: scale(1.15);
+      color: $brand-accent;
+    }
+  }
+}
+
+.cardIcon {
+  font-size: 3rem;
+  color: $text-gray-400;
+  margin-bottom: 1.5rem;
+  transition: all $transition-normal ease;
+  position: relative;
+  z-index: 1;
+}
+
+.cardName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $text-white;
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cardLabel {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $brand-accent;
+  background: rgba($brand-accent, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: $radius-sm;
+  position: relative;
+  z-index: 1;
+}
+
+.cta {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid $border-white-10;
+  border-radius: $radius-md;
+  backdrop-filter: blur(10px);
+}
+
+.ctaText {
+  font-size: 1.125rem;
+  color: $text-gray-300;
+  margin-right: 1rem;
+}
+
+.ctaLink {
+  display: inline-block;
+  color: $brand-accent;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color $transition-normal ease;
+
+  &:hover {
+    color: #ff6b6b;
+    text-decoration: underline;
+  }
+}
+
+@include mobile {
+  .guests {
+    padding: 4rem 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 2rem 1.5rem;
+  }
+
+  .cardIcon {
+    font-size: 2.5rem;
+  }
+
+  .cardName {
+    font-size: 1.25rem;
+  }
+
+  .cta {
+    padding: 1.5rem;
+  }
+
+  .ctaText {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 0.75rem;
+  }
+}

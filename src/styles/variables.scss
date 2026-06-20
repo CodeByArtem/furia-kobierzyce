@@ -1,0 +1,43 @@
+// Colors
+$brand-dark: #09090b;
+$brand-light: #18181b;
+$brand-accent: #dc2626;
+$brand-accent-hover: #b91c1c;
+
+// Text colors
+$text-white: #ffffff;
+$text-gray-200: #e5e5e5;
+$text-gray-300: #d4d4d4;
+$text-gray-400: #a3a3a3;
+$text-gray-500: #737373;
+$text-gray-600: #52525b;
+
+// Border colors
+$border-white-5: rgba(255, 255, 255, 0.05);
+$border-white-10: rgba(255, 255, 255, 0.1);
+$border-white-20: rgba(255, 255, 255, 0.2);
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-2xl: 4rem;
+
+// Border radius
+$radius-sm: 0.5rem;
+$radius-md: 0.75rem;
+$radius-lg: 1rem;
+$radius-xl: 1.5rem;
+$radius-2xl: 2rem;
+$radius-3xl: 2.5rem;
+
+// Typography (CSS variables from next/font/google)
+$font-sans: var(--font-inter), sans-serif;
+$font-heading: var(--font-montserrat), sans-serif;
+
+// Transitions
+$transition-fast: 150ms;
+$transition-normal: 300ms;
+$transition-slow: 500ms;

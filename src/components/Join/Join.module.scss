@@ -1,0 +1,204 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.join {
+  padding: 6rem 0;
+  background-color: $brand-dark;
+  overflow: hidden;
+}
+
+.container {
+  @include container;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.label {
+  display: block;
+  color: $brand-accent;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  @include heading;
+  font-size: 3rem;
+  color: $text-white;
+  margin-bottom: 1rem;
+
+  @include tablet {
+    font-size: 3.75rem;
+  }
+
+  @include desktop {
+    font-size: 4.5rem;
+  }
+}
+
+.accent {
+  color: $brand-accent;
+}
+
+.description {
+  color: $text-gray-400;
+  font-size: 1.125rem;
+  max-width: 32rem;
+  margin: 0 auto;
+  font-weight: 500;
+
+  @include tablet {
+    font-size: 1.25rem;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+
+  @include desktop {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.rules {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ruleCard {
+  background-color: $brand-light;
+  padding: 1.5rem;
+  border-radius: $radius-2xl;
+  border-left: 4px solid $brand-accent;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.ruleTitle {
+  @include heading;
+  font-size: 1.25rem;
+  color: $text-white;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  i {
+    color: $brand-accent;
+  }
+}
+
+.ruleList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: $text-gray-400;
+  font-size: 0.875rem;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+
+    i {
+      color: $brand-accent;
+      margin-top: 0.125rem;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.formCard {
+  background-color: $brand-light;
+  padding: 2rem;
+  border-radius: $radius-2xl;
+  border: 1px solid $border-white-5;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.formTitle {
+  @include heading;
+  font-size: 1.5rem;
+  color: $text-white;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  background-color: $brand-dark;
+  color: $text-white;
+  border: 1px solid $border-white-10;
+  border-radius: $radius-md;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: border-color $transition-normal ease;
+
+  &:focus {
+    outline: none;
+    border-color: $brand-accent;
+  }
+
+  &::placeholder {
+    color: $text-gray-500;
+  }
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 5rem;
+}
+
+.inputError {
+  border-color: #ef4444;
+
+  &:focus {
+    border-color: #ef4444;
+  }
+}
+
+.error {
+  display: block;
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.submitButton {
+  @include button-primary;
+  margin-top: 1rem;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

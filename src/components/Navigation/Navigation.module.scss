@@ -1,0 +1,212 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba($brand-dark, 0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 2px solid rgba($brand-accent, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: all $transition-normal ease;
+}
+
+.navScrolled {
+  background-color: rgba($brand-dark, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @include tablet {
+    padding: 0 1.5rem;
+  }
+
+  @include desktop {
+    padding: 0 2rem;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: transform $transition-normal ease;
+  z-index: 1002;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.logoImage {
+  height: 4rem;
+  width: auto;
+  filter: drop-shadow(0 0 15px rgba($brand-accent, 0.4));
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1002;
+  transition: all $transition-normal ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.burgerLine {
+  width: 1.75rem;
+  height: 0.125rem;
+  background-color: $text-white;
+  border-radius: 2px;
+  transition: all $transition-normal ease;
+  transform-origin: center;
+
+  &:not(:last-child) {
+    margin-bottom: 0.375rem;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.burgerLineOpen {
+  &:nth-child(1) {
+    transform: rotate(45deg) translate(0.375rem, 0.375rem);
+  }
+
+  &:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+
+  &:nth-child(3) {
+    transform: rotate(-45deg) translate(0.375rem, -0.375rem);
+  }
+}
+
+.links {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  width: 50%;
+  height: 100vh;
+  background-color: #0a0a0c;
+  padding: 6rem 2rem 2rem;
+  transition: transform $transition-normal ease;
+  z-index: 1001;
+  border-left: 2px solid $brand-accent;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
+}
+
+.linksOpen {
+  display: flex;
+  transform: translateX(0);
+}
+
+@media (min-width: 1024px) {
+  .links {
+    display: flex !important;
+    flex-direction: row !important;
+    position: static !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    transform: none !important;
+    width: auto !important;
+    height: auto !important;
+    top: auto !important;
+    right: auto !important;
+    border-left: none !important;
+    box-shadow: none !important;
+    gap: 1.5rem;
+    z-index: auto;
+  }
+
+  .linksOpen {
+    transform: none !important;
+  }
+}
+
+.link {
+  color: $text-gray-300;
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color $transition-normal ease, background-color $transition-normal ease;
+  padding: 1rem 0;
+  border-bottom: 1px solid $border-white-5;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    color: $text-white;
+    background-color: rgba($brand-accent, 0.1);
+  }
+
+  &:active {
+    background-color: rgba($brand-accent, 0.2);
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 0.875rem;
+    padding: 0;
+    border-bottom: none;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    &:active {
+      background-color: transparent;
+    }
+  }
+}
+
+.linkAccent {
+  @extend .link;
+  color: $brand-accent;
+  font-weight: 700;
+
+  &:hover {
+    color: $brand-accent-hover;
+  }
+}
