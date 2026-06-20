@@ -40,7 +40,7 @@ export default function Media() {
             Furia w <span className={styles.accent}>Obiektywie</span>
           </h2>
           <p className={styles.description}>
-            Emocje, pot, walka na siatce i najlepsze моменты z naszych meczów oraz treningów.
+            Emocje, pot, walka na siatce i najlepsze momenty z naszych meczów oraz treningów.
           </p>
         </div>
 
