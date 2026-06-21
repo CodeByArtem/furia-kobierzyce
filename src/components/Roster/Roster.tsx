@@ -93,7 +93,7 @@ export default function Roster() {
                 <i className="fa-solid fa-chair"></i> Ławka rezerwowych
               </div>
               <div className={styles.benchPlayers}>
-                {players.slice(0, 6).map((player, index) => (
+                {players.slice(6).map((player, index) => (
                   <button
                     key={player.id}
                     className={`${styles.benchNode} ${activePlayer.id === player.id ? styles.benchNodeActive : ''}`}
